@@ -6,6 +6,7 @@
 */
 
 #include <stdlib.h>
+#include "my.h"
 
 int arrlen(void **arr)
 {

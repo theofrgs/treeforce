@@ -16,7 +16,7 @@ OBJ				= 	$(SRC:%.c=%.o)
 
 INCLUDES		=	-I include -I lib/my/include
 
-CFLAGS			= 	-W -Wall -Wshadow -Wextra $(INCLUDES)
+CFLAGS			= 	-W -Wall -Wshadow -Wextra -Werror $(INCLUDES)
 
 LIB_DIR 		= 	lib/my
 
@@ -25,7 +25,7 @@ LIB				=	-L $(LIB_DIR) -lmy
 LDFLAGS			=	$(LIB)
 
 .PHONY:				release
-release:			
+release:
 					$(shell (cd build 2>/dev/null && find src -name "*.o" | while read ligne ; do mkdir -p "../$${ligne%/*}" 2>/dev/null ; mv $$ligne "../$${ligne%/*}" ; done)) 
 					$(RM) -r build 2>/dev/null || :
 				    $(RM) $(NAME)

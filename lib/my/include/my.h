@@ -45,5 +45,7 @@ void my_put_arr(void **arr, char *type);
 void free_arr(void **arr);
 int my_char_isnum(char c);
 char **str_array(char *str, char *word);
+char *my_strcat(char *dest, char *src);
+char *my_read_file(char *file_path);
 
 #endif /* !MY_H_ */

@@ -5,17 +5,18 @@
 ** main.c
 */
 
+
 #include "my.h"
+#include "treeforce.h"
 #include "macros.h"
 #include <stdio.h>
+#include <unistd.h>
 
-int main(void)
+
+int main(int ac, char **argv)
 {
-    char *str = my_strdup("hello world");
-    char **arr = str_array(str, " ");
-    char **test = my_arrdup(arr);
-
-    my_put_arr((void **)test, "char");
-    free_arr((void **)test);
-    return (SUCCESS);
+    if (ac != 2)
+        return (1);
+    treeforces(argv);
+    return (0);
 }
