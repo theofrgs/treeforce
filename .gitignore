@@ -1,0 +1,7 @@
+build
+*.o
+*.gcno
+*.gcda
+*.a
+libmy.a
+treeforce
